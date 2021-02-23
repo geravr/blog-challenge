@@ -6,7 +6,7 @@ import { Row, Col } from "react-bootstrap";
 
 // Components
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import SeoComponent from "../components/SeoComponent"
 import PostCard from "../components/PostCard"
 
 const IndexPage = () => {
@@ -35,7 +35,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="Blog - challenge"/>
+      <SeoComponent title="Blog - challenge"/>
       <Row>
         <Col sm={12}>
           <h1>Bienvenido a mi blog</h1>

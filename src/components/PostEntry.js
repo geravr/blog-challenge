@@ -8,7 +8,7 @@ import { Badge } from "react-bootstrap"
 
 // Components
 import Layout from "./Layout"
-import Seo from"./Seo"
+import SeoComponent from"./SeoComponent"
 
 // Styles
 import style from "./PostEntry.module.scss"
@@ -41,7 +41,7 @@ const PostEntry = ({ data }) => {
   const contentText = JSON.parse(content.raw)
   return (
     <Layout>
-      <Seo title={title} description={description} />
+      <SeoComponent title={title} description={description} />
       <Img fluid={image.fluid} alt={title} className={style.image} />
       <h1 className="mt-2 mb-0">{title}</h1>
       <Badge pill variant="secondary">{author}</Badge>
