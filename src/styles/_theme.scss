@@ -1,0 +1,11 @@
+@import 'variables';
+
+$theme-colors: ("primary": $primary,
+  "primary-light": $primary-light,
+  "primary-dark": $primary-dark,
+  "secondary": $secondary,
+  "secondary-light": $secondary-light,
+  "secondary-dark": $secondary-dark,
+);
+
+@import "~bootstrap/scss/bootstrap";

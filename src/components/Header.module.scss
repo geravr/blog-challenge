@@ -1,0 +1,16 @@
+@import '../styles/variables';
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  background: #fc5c7d;
+  background: -webkit-linear-gradient(to right, #fc5c7d, #6a82fb);
+  background: linear-gradient(to right, #fc5c7d, #6a82fb);
+
+  h2 {
+    font-size: 2.2rem;
+    color: white;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.card {
+  @include default-border-radius;
+  @include default-shadow;
+  border: 1px solid transparent;
+  height: 22rem;
+
+  img, .img {
+    height: 190px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &:hover {
+    a {
+      color: $secondary;
+    }
+  }
+}

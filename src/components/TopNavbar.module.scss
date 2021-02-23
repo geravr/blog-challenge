@@ -1,0 +1,15 @@
+@import '../styles/variables';
+
+.nav {
+  a {
+    text-decoration: none;
+    padding: 0 .5rem;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+.activeLink {
+  text-decoration: underline;
+  text-decoration-color: $secondary;
+}

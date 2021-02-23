@@ -1,7 +1,29 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    {
+      allContentfulPost {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-// You can delete this file if you're not using it
+  if (result.errors) {
+    reporter.panic('No existen resultados ', result.errors)
+  }
+
+  const posts = result.data.allContentfulPost.edges
+
+  posts.forEach(post => {
+    actions.createPage({
+      path: post.node.slug,
+      component: require.resolve('./src/components/PostEntry.js'),
+      context: {
+        slug: post.node.slug
+      }
+    })
+  })
+}
