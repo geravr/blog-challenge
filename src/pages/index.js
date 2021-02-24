@@ -6,7 +6,7 @@ import { Row, Col } from "react-bootstrap";
 
 // Components
 import Layout from "../components/Layout"
-import SeoComponent from "../components/SeoComponent"
+import Seo from "../components/Seo"
 import PostCard from "../components/PostCard"
 
 const IndexPage = () => {
@@ -20,7 +20,6 @@ const IndexPage = () => {
           id
           title
           description
-          author
           slug
           image {
             fluid(maxWidth: 348) {
@@ -35,7 +34,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SeoComponent title="Blog - challenge"/>
+      <Seo title="Blog - challenge"/>
       <Row>
         <Col sm={12}>
           <h1>Bienvenido a mi blog</h1>
@@ -44,7 +43,7 @@ const IndexPage = () => {
         </Col>
         {posts.map(post => {
           return (
-            <PostCard post={post} key={post.node.id} />
+            <PostCard post={post.node} key={post.node.id} />
           )
         })}
       </Row>
