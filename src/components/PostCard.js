@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -9,7 +10,7 @@ import { Col, Card } from "react-bootstrap"
 import style from "./PostCard.module.scss"
 
 const PostCard = ({ post }) => {
-  const { title, description, slug, image } = post.node
+  const { title, description, slug, image } = post
   return (
     <Col md={6} lg={4} className="my-3">
       <Card className={style.card}>
@@ -27,6 +28,15 @@ const PostCard = ({ post }) => {
       </Card>
     </Col>
    );
+}
+
+PostCard.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+  })
 }
 
 export default PostCard;
